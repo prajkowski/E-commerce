@@ -25,8 +25,5 @@ public class CartItem {
         this.product = product;
     }
 
-    @Override
-    public String toString() {
-        return product.getName() + " " + product.getPrice() + ", quantity: " + this.quantity;
-    }
+
 }

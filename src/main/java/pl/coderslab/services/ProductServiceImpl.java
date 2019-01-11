@@ -1,9 +1,14 @@
 package pl.coderslab.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import pl.coderslab.model.Product;
 import pl.coderslab.repositories.ProductRepository;
 
+import javax.transaction.Transactional;
+
+@Service
+@Transactional
 public class ProductServiceImpl implements ProductService {
 
     @Autowired
