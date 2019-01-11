@@ -1,3 +1,4 @@
 # E-commerce
 
-Projekt sklepu internetowego pozwala na wybieranie produktów i dodawanie ich do koszyka. Po przejściu do koszyka możliwa jest jego edycja lub przejście do formularza pozwalającego złożyć zamówienie (wybranie sposobu dostawy i formy płatności).
+Projekt sklepu internetowego pozwala obecnie na przeglądanie produktów.
+Po dodaniu kolejnych funkcji możliwe będzie dodawanie produktów do koszyka, jego edycja i przejście do formularza pozwalającego złożyć zamówienie poprzez wybranie sposobu dostawy i formy płatności.
