@@ -6,6 +6,7 @@ import pl.coderslab.model.Product;
 import pl.coderslab.repositories.ProductRepository;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Service
 @Transactional
@@ -16,7 +17,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public void save(Product product) {
-
+        productRepository.save(product);
     }
 
     @Override
@@ -32,5 +33,9 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public void delete(Long id) {
 
+    }
+
+    public List<Product> findByType(String type) {
+        return productRepository.findByType(type);
     }
 }

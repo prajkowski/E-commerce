@@ -16,6 +16,9 @@ public class Product {
     private long id;
 
     @NotBlank
+    private String type;
+
+    @NotBlank
     private String manufacturer;
 
     @NotBlank
@@ -36,6 +39,14 @@ public class Product {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public String getManufacturer() {
@@ -68,5 +79,16 @@ public class Product {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "type='" + type + '\'' +
+                ", manufacturer='" + manufacturer + '\'' +
+                ", model='" + model + '\'' +
+                ", price=" + price +
+                ", description='" + description + '\'' +
+                '}';
     }
 }
