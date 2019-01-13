@@ -17,8 +17,15 @@ public class ProductController {
     private ProductService productService;
 
     @GetMapping("/bezlusterkowce")
-    public String products(Model model) {
+    public String bezlusterkowce(Model model) {
         List<Product> products = productService.findByType("bezlusterkowce");
+        model.addAttribute("products", products);
+        return "products";
+    }
+
+    @GetMapping("/dslr")
+    public String dslr(Model model) {
+        List<Product> products = productService.findByType("DSLR");
         model.addAttribute("products", products);
         return "products";
     }
