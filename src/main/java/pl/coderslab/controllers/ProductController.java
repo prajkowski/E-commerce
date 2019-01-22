@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import pl.coderslab.model.Product;
 import pl.coderslab.services.ProductService;
 import pl.coderslab.services.ProductServiceImpl;
@@ -30,9 +32,9 @@ public class ProductController {
         return "products";
     }
 
-    @GetMapping("/p/{name}")
-    public String product(Model model) {
-        Product product = productService.find(1L);
+    @GetMapping("/p/{id}")
+    public String product(@PathVariable Long id, Model model) {
+        Product product = productService.findFirstById(id);
         model.addAttribute(product);
         return "productSpecs";
     }

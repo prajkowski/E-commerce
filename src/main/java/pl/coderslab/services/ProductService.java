@@ -10,7 +10,7 @@ public interface ProductService {
 
     void update(Product product);
 
-    Product find(Long id);
+    Product findFirstById(Long id);
 
     void delete(Long id);
 
