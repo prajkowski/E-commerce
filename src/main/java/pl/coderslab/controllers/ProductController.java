@@ -30,4 +30,11 @@ public class ProductController {
         return "products";
     }
 
+    @GetMapping("/p/{name}")
+    public String product(Model model) {
+        Product product = productService.find(1L);
+        model.addAttribute(product);
+        return "productSpecs";
+    }
+
 }
