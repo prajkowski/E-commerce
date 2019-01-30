@@ -5,15 +5,20 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PostMapping;
+import pl.coderslab.model.Cart;
+import pl.coderslab.model.CartItem;
 import pl.coderslab.model.Product;
 import pl.coderslab.services.ProductService;
-import pl.coderslab.services.ProductServiceImpl;
 
 import java.util.List;
 
 @Controller
 public class ProductController {
+
+
+    @Autowired
+    private Cart cart;
 
     @Autowired
     private ProductService productService;
@@ -33,10 +38,19 @@ public class ProductController {
     }
 
     @GetMapping("/p/{id}")
-    public String product(@PathVariable Long id, Model model) {
+    public String productGet(@PathVariable Long id, Model model) {
         Product product = productService.findFirstById(id);
         model.addAttribute(product);
         return "productSpecs";
+    }
+
+    @PostMapping("/p/{id}")
+    public String productPost(@PathVariable Long id, Model model) {
+        Product product = productService.findFirstById(id);
+        model.addAttribute(product);
+        CartItem cartItem = new CartItem(1, product);
+        cart.addToCart(cartItem);
+        return "redirect:/cart";
     }
 
 }
