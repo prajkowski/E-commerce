@@ -15,34 +15,40 @@
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
 </head>
-<body>
+<body class="bg-light">
 
 <%@include file="parts/header.jsp" %>
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="font-weight-bold">Twój koszyk</h4>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Produkt</th>
+                    <th scope="col">Cena</th>
+                    <th scope="col">Ilość</th>
+                    <th scope="col">Usuń</th>
+                </tr>
+                </thead>
+                <tbody>
+                <c:forEach var="item" items="${cart.cartItems}">
+                    <tr>
+                        <td><a href="/p/${item.product.id}">${item.product.model}</a></td>
+                        <td>${item.product.price}</td>
+                        <td>${item.quantity}</td>
+                        <td><a href="/delete/${item.product.id}">X</a></td>
+                    </tr>
+                </c:forEach>
+                </tbody>
+            </table>
 
-<table class="table">
-    <thead>
-    <tr>
-        <th scope="col">Produkt</th>
-        <th scope="col">Cena</th>
-        <th scope="col">Ilość</th>
-        <th scope="col">Razem</th>
-    </tr>
-    </thead>
-    <tbody>
-    <c:forEach var="item" items="${cart.cartItems}">
-        <tr>
-            <td>${item.product.model}</td>
-            <td>${item.product.price}</td>
-            <td>${item.quantity}</td>
-            <td></td>
-        </tr>
-    </c:forEach>
-    </tbody>
-</table>
-
-<div>
-W koszyku jest ${items} pozycji
-Wartość zakupów: ${total}
+            <div>
+                W koszyku jest ${items} pozycji
+                Wartość zakupów: ${total}
+            </div>
+        </div>
+    </div>
 </div>
 
 </body>

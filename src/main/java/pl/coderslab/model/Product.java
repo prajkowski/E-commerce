@@ -28,8 +28,8 @@ public class Product {
     @Min(0)
     private double price;
 
+    @Column(columnDefinition = "TEXT")
     @NotBlank
-    @Size(max = 300)
     private String description;
 
     @NotBlank

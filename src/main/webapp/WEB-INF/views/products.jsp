@@ -22,7 +22,9 @@
 <div class="card-deck col-sm-6">
     <c:forEach var="product" items="${products}">
         <div class="card col-sm-4" style="width: 18rem;">
-            <img class="card-img-top" src="${product.imageUrl}" alt="Card image cap">
+            <a href="/p/${product.id}">
+                <img class="card-img-top" src="${product.imageUrl}" alt="Card image cap">
+            </a>
             <div class="card-body">
                 <h5 class="card-title">${product.model}</h5>
                 <p class="card-text">${product.price}</p>

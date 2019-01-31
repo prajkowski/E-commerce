@@ -25,10 +25,11 @@
     <h1>${product.manufacturer} ${product.model}</h1>
     <img src="${product.imageUrl}">
     <h2>${product.price}</h2>
+    <p>${product.description}</p>
 
-<form method="post">
-    <input class="btn btn-primary" type="submit" value="Dodaj do koszyka">
-</form>
+
+    <a href="/addToCart/${product.id}/1" class="btn btn-primary">Dodaj do koszyka</a>
+
 
 </div>
 
