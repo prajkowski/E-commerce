@@ -22,7 +22,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public void update(Product product) {
-
+        productRepository.save(product);
     }
 
     @Override
@@ -32,7 +32,8 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public void delete(Long id) {
-
+        Product product = productRepository.findFirstById(id);
+        productRepository.delete(product);
     }
 
     public List<Product> findByType(String type) {

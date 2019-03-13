@@ -37,6 +37,13 @@ public class ProductController {
         return "products";
     }
 
+    @GetMapping("/obiektywy")
+    public String obiektywy(Model model) {
+        List<Product> products = productService.findByType("obiektywy");
+        model.addAttribute("products", products);
+        return "products";
+    }
+
     @GetMapping("/p/{id}")
     public String productGet(@PathVariable Long id, Model model) {
         Product product = productService.findFirstById(id);
