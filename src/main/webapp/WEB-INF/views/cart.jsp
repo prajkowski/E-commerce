@@ -45,8 +45,14 @@
 
             <div>
                 W koszyku jest ${items} pozycji
-                Wartość zakupów: ${total}
+                Wartość zakupów: <strong>${total}</strong>
             </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <a href="/order" class="btn btn-primary float-right">Dostawa i płatność</a>
         </div>
     </div>
 </div>

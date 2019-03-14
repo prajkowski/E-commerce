@@ -42,7 +42,6 @@ public class CartController {
                     return "redirect:/cart";
                 }
             }
-
         }
         cart.addToCart(new CartItem(n, product));
         return "redirect:/cart";
